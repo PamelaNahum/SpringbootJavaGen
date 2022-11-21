@@ -30,10 +30,9 @@ public class User {
     @Column(name="email", unique = true)
     private String correo;
 
-    //relacion one to one
-    @JsonBackReference
+  
     //cuando se envia una relacion one to one siempre se ocupa LAZY
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "user")
     private License license;
 
     //relacion one to many

@@ -24,9 +24,8 @@ public class License {
     private String clase;
     private String estado;
 
-    //recepcion de la relacion one to one(desde user)
-    @JsonManagedReference
-    @OneToOne(fetch = FetchType.EAGER)
+
+    @OneToOne()
     //se crea la columna con la FK
     @JoinColumn(name="user_id")
     private User user;

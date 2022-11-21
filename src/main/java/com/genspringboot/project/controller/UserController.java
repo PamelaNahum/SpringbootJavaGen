@@ -29,12 +29,13 @@ public class UserController {
     public User getUser(@PathVariable Integer id){
         return userService.getUser(id);
     }
-
+    //si no lleva id, agrega
+    //si lleva id, pero el id no existe, tambien agrega
     @PostMapping("/user")
     public User newUser(@RequestBody User user){
         return userService.save(user);
     }
-
+    //si lleva id y si el id existe en la base, este lo actualiza con los nuevos datos
     @PutMapping("/user")
     public User updatUser(@RequestBody User user){
         return userService.save(user);
