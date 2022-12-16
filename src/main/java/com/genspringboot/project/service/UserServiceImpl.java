@@ -1,5 +1,6 @@
 package com.genspringboot.project.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -36,5 +37,10 @@ public class UserServiceImpl implements UserService{
     public void delete(Integer id){
         //delete from user where id = id;
         userRepository.deleteById(id);
+    }
+    
+    @Override
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
     }
 }
