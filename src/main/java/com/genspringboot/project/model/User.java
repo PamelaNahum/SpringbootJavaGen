@@ -35,8 +35,7 @@ public class User {
     @OneToOne(mappedBy = "user")
     private License license;
 
-    //relacion one to many
-    @JsonBackReference
+    
     //en las relaciones one to many el tipo de fetch siempre se hace con EAGER cuando se envía :D
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch= FetchType.EAGER)
     private List<BuySell> buySell;
